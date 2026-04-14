@@ -2,8 +2,8 @@ import 'dart:collection';
 import 'dart:io';
 import 'dart:ui';
 import 'package:path_provider/path_provider.dart';
-import 'package:ffmpeg_kit_flutter_full_gpl/ffmpeg_kit.dart';
-import 'package:ffmpeg_kit_flutter_full_gpl/return_code.dart';
+import 'package:ffmpeg_kit_flutter_new/ffmpeg_kit.dart';
+import 'package:ffmpeg_kit_flutter_new/return_code.dart';
 import 'package:image/image.dart' as img;
 import '../models/watermark_region.dart';
 
