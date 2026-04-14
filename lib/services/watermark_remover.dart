@@ -27,9 +27,9 @@ class WatermarkRemover {
     final outputPath = '${tempDir.path}/dewatermark_$timestamp.mp4';
 
     // 构建 delogo 滤镜链，支持多个水印区域
-    final filters = regions
-        .map((r) => r.toDelogoFilter())
-        .join(',');
+    // 后接 unsharp 锐化，改善 delogo 修复区域的模糊感
+    final delogoFilters = regions.map((r) => r.toDelogoFilter()).join(',');
+    final filters = '$delogoFilters,unsharp=lx=3:ly=3:la=0.5:cx=3:cy=3:ca=0.0';
 
     final cmd = '-i "$inputPath" '
         '-vf "$filters" '
